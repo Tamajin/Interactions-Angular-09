@@ -3,4 +3,5 @@ export interface FieldsForm {
   race: string;
   birthday: string;
   picture: string;
+  isMouseOver: boolean;
 }

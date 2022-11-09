@@ -1,0 +1,15 @@
+.sidebar-user {
+    width: 200px;
+    border: solid 1px grey;
+    height: 50vh;
+}
+
+h3 {
+    text-align: center;
+}
+
+img {
+    width: 100px;
+    height: 90px;   
+    border-radius: 80%;
+}

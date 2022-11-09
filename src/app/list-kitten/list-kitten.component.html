@@ -1,1 +1,15 @@
-<p>list-kitten works!</p>
+<h3>Cats to adopt :</h3>
+<div class="cat-list-wrapper">
+  <ul *ngFor="let cats of catsList">
+    <img
+      [src]="cats.picture"
+      [alt]="cats.name"
+      (mouseover)="setMouseOver()"
+      (mouseout)="setMouseOut()"
+    />
+    <li *ngIf="cats.isMouseOver">Name : {{ cats.name }}</li>
+    <li *ngIf="cats.isMouseOver">Race : {{ cats.race }}</li>
+    <li *ngIf="cats.isMouseOver">Birthday : {{ cats.birthday }}</li>
+    <button class="adopt" (click)="adoption()">Adopt me 😻</button>
+  </ul>
+</div>

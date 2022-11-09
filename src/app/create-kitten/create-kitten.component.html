@@ -1,11 +1,49 @@
-<form>
-  <label for="name">Cat's name : </label>
-  <input type="text" id="name" />
-  <label for="race">Cat's race : </label>
-  <input type="text" id="race" />
-  <label for="birthday">Cat's birthday : </label>
-  <input type="text" id="birthday" />
-  <label for="picture">Cat's picture : </label>
-  <input type="text" id="picture" />
-  <input type="submit" />
-</form>
+<div class="main-wrapper">
+  <app-list-kitten
+    [cats]="fieldsForm"
+    [catsList]="catsList"
+    (isMouseOut)="setMouseOut($event)"
+    (isMouseOver)="setMouseOver($event)"
+    (catsAdopted)="adoption($event)"
+  ></app-list-kitten>
+  <div *ngIf="isFormVisible">
+    <h3>Add new cat pedigree :</h3>
+    <form (submit)="addCat()">
+      <label for="name">Cat's name : </label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        [(ngModel)]="fieldsForm.name"
+        required
+      />
+      <label for="race">Cat's race : </label>
+      <input
+        type="text"
+        id="race"
+        name="race"
+        [(ngModel)]="fieldsForm.race"
+        required
+      />
+      <label for="birthday">Cat's birthday : </label>
+      <input
+        type="text"
+        id="birthday"
+        name="birthday"
+        [(ngModel)]="fieldsForm.birthday"
+        required
+      />
+      <label for="picture">Cat's picture : </label>
+      <input
+        type="text"
+        id="picture"
+        name="picture"
+        [(ngModel)]="fieldsForm.picture"
+        required
+      />
+      <input type="submit" />
+    </form>
+  </div>
+  <app-user-kitten [catsAdoptedList]="catsAdoptedList"></app-user-kitten>
+</div>
+<button (click)="displayForm()" *ngIf="!isFormVisible">Add a new Cat</button>

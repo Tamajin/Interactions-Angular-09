@@ -1,0 +1,30 @@
+form {
+    width: 250px;
+    height: 300px;
+    border: 2px solid grey;
+    display: flex;
+    flex-direction: column;;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+h3 {
+    text-align: center;
+}
+
+.main-wrapper {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+input {
+    width: 100px
+}
+
+button {
+    display: block;;
+    width: 150px;
+    height: 30px;
+    margin: auto;
+    margin-top: 30px;
+}
